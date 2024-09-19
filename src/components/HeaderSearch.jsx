@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import searchIcon from "../assets/search-icon.png";
 function HeaderSearch(props) {
   let [showState, setShowState] = useState(false);
   function changeShowState() {
@@ -21,26 +20,13 @@ function HeaderSearch(props) {
   
   return (
     <>
-      <p>Count: {count}</p>
-      <button onClick={upCounter} className="btn btn-primary">
-        Add +1
-      </button>
+     
 
 
+      <input className="header-container__right__input" type="text" />
 
-
-      {showState ? (
-        <input className="header-container__right__input" type="text" />
-      ) : (
-        <div></div>
-      )}
-      <button onClick={changeShowState} className="search">
-        <img
-          className="header-container__right__search"
-          src={searchIcon}
-          alt="search"
-        ></img>
-      </button>
+      
+      
     </>
   );
 }
