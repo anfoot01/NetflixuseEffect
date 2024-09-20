@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderLog from "./HeaderLog";
-import HeaderSearch from "./HeaderSearch"
+import HeaderSearch from "./HeaderSearch";
+import searchIcon from "../../src/assets/search-icon.png";
 import logo from "../assets/netflix-logo.png";
 import "./Header.scss";
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
   //   const currentDate = month + "/" + date + "th";
   // }
   const currentDate = "Friday 8th July";
-  
+  let [showCounter, setShowCounter] = useState(true);
   return (
     <header className="header-container">
       <div className="header-container__left">
@@ -29,7 +30,15 @@ const Header = () => {
         <div className="header-container__left__date">| {currentDate}</div>
       </div>
       <div className="header-container__right">
-        {/* <HeaderSearch></HeaderSearch> */}
+      {showCounter && <HeaderSearch></HeaderSearch>}
+      <button className="searchBtn" onClick={() => setShowCounter(!showCounter)}>
+      <img
+            className="header-container__right__search"
+            src={searchIcon}
+            alt="search"
+          ></img>
+        </button>
+       
         <HeaderLog></HeaderLog>
       </div>
     </header>
